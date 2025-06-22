@@ -13,10 +13,12 @@ from .game import exit
 
 # The actual screen will be installed here
 from .screen import screen_instance as screen
+# World instance
+from .world import world_instance as world
 
 
 __all__ = [
-    'screen',  # graphics output
+    'screen', 'world',  # graphics output
     'Actor', 'images',  # graphics
     'sounds', 'music', 'tone',  # sound
     'clock', 'animate',  # timing
