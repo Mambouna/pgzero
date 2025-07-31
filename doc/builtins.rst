@@ -501,7 +501,7 @@ pixel level, meaning that if the rects of two actors overlap but their
 images don't actually intersect, a collision won't be reported. This is
 a lot more precise but also more work to check for. If coarse detection 
 is fine, always use ``.colliderect()``. If you need high precision, use
-``.collidemask()`` only where necessary.
+``.collidemask()`` only where it is necessary.
 
 Positioning Actors
 ''''''''''''''''''
