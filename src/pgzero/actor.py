@@ -386,7 +386,7 @@ class Actor:
 
         # If the rects don't collide, exit early.
         if not self.colliderect(target):
-            return None
+            return False
 
         # Create masks that are not yet present.
         if not self._mask:
