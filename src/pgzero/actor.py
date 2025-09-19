@@ -252,14 +252,14 @@ class Actor:
         return name
 
     @classmethod
-    def square(self, side, color, pos=POS_TOPLEFT, anchor=ANCHOR_CENTER,
+    def Square(self, side, color, pos=POS_TOPLEFT, anchor=ANCHOR_CENTER,
                **kwargs):
         """Creates an actor with a square as an image."""
         name = self._make_shape_image("__SHAPE_SQUARE__", side, side, color)
         return Actor(name, pos, anchor, **kwargs)
 
     @classmethod
-    def rectangle(self, width, height, color, pos=POS_TOPLEFT,
+    def Rectangle(self, width, height, color, pos=POS_TOPLEFT,
                   anchor=ANCHOR_CENTER, **kwargs):
         """Creates an actor with a rectangle as an image."""
         name = self._make_shape_image("__SHAPE_RECTANGLE__", width, height,
@@ -267,7 +267,7 @@ class Actor:
         return Actor(name, pos, anchor, **kwargs)
 
     @classmethod
-    def circle(self, diameter, color, pos=POS_TOPLEFT, anchor=ANCHOR_CENTER,
+    def Circle(self, diameter, color, pos=POS_TOPLEFT, anchor=ANCHOR_CENTER,
                **kwargs):
         """Creates an actor with a circle as an image."""
         name = self._make_shape_image("__SHAPE_CIRCLE__", diameter, diameter,
@@ -275,7 +275,7 @@ class Actor:
         return Actor(name, pos, anchor, **kwargs)
 
     @classmethod
-    def ellipse(self, width, height, color, pos=POS_TOPLEFT,
+    def Ellipse(self, width, height, color, pos=POS_TOPLEFT,
                 anchor=ANCHOR_CENTER, **kwargs):
         """Creates an actor with an ellipse as an image."""
         name = self._make_shape_image("__SHAPE_ELLIPSE__", width, height,
@@ -283,7 +283,7 @@ class Actor:
         return Actor(name, pos, anchor, **kwargs)
 
     @classmethod
-    def triangle(self, width, height, color, pos=POS_TOPLEFT,
+    def Triangle(self, width, height, color, pos=POS_TOPLEFT,
                  anchor=ANCHOR_CENTER, **kwargs):
         """Creates an actor with a triangle as an image."""
         name = self._make_shape_image("__SHAPE_TRIANGLE__", width, height,

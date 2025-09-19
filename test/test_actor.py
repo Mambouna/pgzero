@@ -151,7 +151,7 @@ class ActorTest(unittest.TestCase):
     def test_actor_square(self):
         """The square image is created correctly and the result is a valid
         actor."""
-        square = Actor.square(10, "red")
+        square = Actor.Square(10, "red")
         name = "__SHAPE_SQUARE__10x10_red"
         self.assertIn((name, (), ()), images._cache)
         surf = images.load(name)
@@ -166,7 +166,7 @@ class ActorTest(unittest.TestCase):
     def test_actor_rectangle(self):
         """The rectangle image is created correctly and the result is a valid
         actor."""
-        square = Actor.rectangle(10, 5, "green")
+        square = Actor.Rectangle(10, 5, "green")
         name = "__SHAPE_RECTANGLE__10x5_green"
         self.assertIn((name, (), ()), images._cache)
         surf = images.load(name)
@@ -181,7 +181,7 @@ class ActorTest(unittest.TestCase):
     def test_actor_circle(self):
         """The circular image is created correctly and the result is a valid
         actor."""
-        square = Actor.circle(5, "blue")
+        square = Actor.Circle(5, "blue")
         name = "__SHAPE_CIRCLE__5x5_blue"
         self.assertIn((name, (), ()), images._cache)
         surf = images.load(name)
@@ -196,7 +196,7 @@ class ActorTest(unittest.TestCase):
     def test_actor_ellipse(self):
         """The elliptical image is created correctly and the result is a valid
         actor."""
-        square = Actor.ellipse(5, 10, "yellow")
+        square = Actor.Ellipse(5, 10, "yellow")
         name = "__SHAPE_ELLIPSE__5x10_yellow"
         self.assertIn((name, (), ()), images._cache)
         surf = images.load(name)
@@ -211,7 +211,7 @@ class ActorTest(unittest.TestCase):
     def test_actor_triangle(self):
         """The triangular image is created correctly and the result is a valid
         actor."""
-        square = Actor.triangle(15, 15, "fuchsia")
+        square = Actor.Triangle(15, 15, "fuchsia")
         name = "__SHAPE_TRIANGLE__15x15_fuchsia"
         self.assertIn((name, (), ()), images._cache)
         surf = images.load(name)

@@ -664,13 +664,13 @@ Simple shapes
 
 If you don't have images yet, not to worry! You can start by creating actors
 from simple colored shapes like a rectangle or a circle. Instead of calling
-``Actor("image_name")`` you instead call ``Actor.shape(dimensions, color)``.
+``Actor("image_name")`` you instead call ``Actor.Shape(dimensions, color)``.
 
 Here's an example::
 
-    character = Actor.square(100, "red")
-    shot = Actor.ellipse(60, 20, "blue")
-    sword = Actor.triangle(50, 15, "green")
+    character = Actor.Square(100, "red")
+    shot = Actor.Ellipse(60, 20, "blue")
+    sword = Actor.Triangle(50, 15, "green")
 
 Note that since a square is the same length on all sides, you only provide
 one number for the dimensions. With the others, you have to provide two for
@@ -678,26 +678,26 @@ width and height.
 
 The following shapes can be created this way:
 
-.. method:: Actor.square(side, color)
+.. method:: Actor.Square(side, color)
 
     Creates an actor with a filled square of the given color as its image.
 
-.. method:: Actor.rectangle(width, height, color)
+.. method:: Actor.Rectangle(width, height, color)
 
     Creates an actor as a rectangle. The difference to the square function
     is that here, the image can have an independent width and height.
 
-.. method:: Actor.circle(diameter, color)
+.. method:: Actor.Circle(diameter, color)
 
     Creates an actor with a filled circle of the given color as its image.
     The background of the image is transparent.
 
-.. method:: Actor.ellipse(width, height, color)
+.. method:: Actor.Ellipse(width, height, color)
 
     Creates an actor as an elliptical. The difference to the circle function
     is that here, the image can have an independent width and height.
 
-.. method:: Actor.triangle(width, height, color)
+.. method:: Actor.Triangle(width, height, color)
 
     Creates an actor with a filled triangle of the given color as its image.
     The triangle points to the right so it always points in the direction of
@@ -706,7 +706,7 @@ The following shapes can be created this way:
 If you wanted to define other parameters like anchor or position when creating
 the actors, you can still do so just like with a normal Actor construction::
 
-    balloon = Actor.circle(50, "red", (150, 150), anchor=("center", "bottom"))
+    balloon = Actor.Circle(50, "red", (150, 150), anchor=("center", "bottom"))
 
 The Keyboard
 ------------
