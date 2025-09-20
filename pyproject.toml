@@ -1,5 +1,5 @@
 [project]
-name = "pgzero"
+name = "pgzero-turbo"
 description = "A zero-boilerplate 2D games framework"
 readme = "README.rst"
 requires-python = ">=3.6"
@@ -12,7 +12,7 @@ dynamic = ["version"]
 
 [project.urls]
 Documentation = "https://pygame-zero.readthedocs.io/"
-Source = "https://github.com/lordmauve/pgzero"
+Source = "https://github.com/Mambouna/pgzero/tree/pgzero-turbo"
 
 [project.scripts]
 pgzrun = "pgzero.runner:main"
