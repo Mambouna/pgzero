@@ -401,7 +401,7 @@ or the displayed mouse cursor.
 
     .. attribute:: pressed_middle
 
-        Returns True if the middle mouse button is currently pressed, 
+        Returns True if the middle mouse button is currently pressed,
         False else.
 
     .. attribute:: pressed_right
@@ -423,14 +423,14 @@ or the displayed mouse cursor.
 
     .. attribute:: recent_pos
 
-        Returns a tuple of the n last positions the mouse had moved 
-        to starting from the most recent. Default for n is 60 and 
+        Returns a tuple of the n last positions the mouse had moved
+        to starting from the most recent. Default for n is 60 and
         can be changed via recent_pos_max.
 
     .. attribute:: recent_pos_max
 
         Returns the total number of positions tracked via recent_pos.
-        
+
         Increasing this value simply extends the length of the queue
         of tracked positions. Decreasing it also cuts the queue to the
         new maximum number of elements.
@@ -448,14 +448,14 @@ or the displayed mouse cursor.
     .. attribute:: recent_rel
 
         Returns a tuple of the n last position changes the mouse had,
-        starting from the most recent. Default for n is 60 and 
+        starting from the most recent. Default for n is 60 and
         can be changed via recent_rel_max.
 
     .. attribute:: recent_rel_max
 
         Returns the total number of position changed tracked via
         recent_pos.
-        
+
         Increasing this value simply extends the length of the queue
         of tracked positions. Decreasing it also cuts the queue to the
         new maximum number of elements.
@@ -492,7 +492,7 @@ or the displayed mouse cursor.
 
         Returns the hotspot tuple of the current cursor or None
         if the hotspot is unknown (because it is a system cursor).
-        
+
 
 Recent pos and rel
 ''''''''''''''''''
@@ -515,7 +515,7 @@ and changes for each individual mouse movement event. Since multiple
 mouse movement events can happen in a single frame, there is no fixed
 relationship between the number of frames passed and the recorded
 positions and relative changes. In general though, a higher maximum
-value means positions and changes from longer before will still be 
+value means positions and changes from longer before will still be
 recorded.
 
 Cursors
@@ -563,9 +563,9 @@ when a system cursor is in use.
 LEFT or pressed_left
 ''''''''''''''''''''
 
-While both are accessed via ``mouse``, ``mouse.LEFT`` and 
+While both are accessed via ``mouse``, ``mouse.LEFT`` and
 ``mouse.pressed_left`` are different things. ``mouse.LEFT`` is used
-in your custom functions that handle mouse events, e.g. 
+in your custom functions that handle mouse events, e.g.
 ``if button == mouse.LEFT`` whereas ``mouse.pressed`` and its variants
 can be used outside of these, for example in the ``update()`` function to
 check whether a mouse button is pressed at that moment.
