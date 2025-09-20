@@ -5,6 +5,7 @@ import pygame
 
 from pgzero.actor import calculate_anchor, Actor
 from pgzero.loaders import set_root
+from pgzero.loaders import images
 
 
 TEST_MODULE = "pgzero.actor"
@@ -247,3 +248,78 @@ class ActorTest(unittest.TestCase):
         a.move_right(distance)
         a.pos = (round(a.x), round(a.y))
         self.assertEqual(a.pos, (50, 50))
+
+    def test_actor_square(self):
+        """The square image is created correctly and the result is a valid
+        actor."""
+        square = Actor.Square(10, "red")
+        name = "__SHAPE_SQUARE__10x10_red"
+        self.assertIn((name, (), ()), images._cache)
+        surf = images.load(name)
+        width, height = surf.get_size()
+        self.assertEqual(width, 10)
+        self.assertEqual(height, 10)
+        self.assertEqual(
+            surf.get_at((width//2, height//2)), (255, 0, 0, 255)
+        )
+        self.assertEqual(type(square), Actor)
+
+    def test_actor_rectangle(self):
+        """The rectangle image is created correctly and the result is a valid
+        actor."""
+        square = Actor.Rectangle(10, 5, "green")
+        name = "__SHAPE_RECTANGLE__10x5_green"
+        self.assertIn((name, (), ()), images._cache)
+        surf = images.load(name)
+        width, height = surf.get_size()
+        self.assertEqual(width, 10)
+        self.assertEqual(height, 5)
+        self.assertEqual(
+            surf.get_at((width//2, height//2)), (0, 255, 0, 255)
+        )
+        self.assertEqual(type(square), Actor)
+
+    def test_actor_circle(self):
+        """The circular image is created correctly and the result is a valid
+        actor."""
+        square = Actor.Circle(5, "blue")
+        name = "__SHAPE_CIRCLE__5x5_blue"
+        self.assertIn((name, (), ()), images._cache)
+        surf = images.load(name)
+        width, height = surf.get_size()
+        self.assertEqual(width, 5)
+        self.assertEqual(height, 5)
+        self.assertEqual(
+            surf.get_at((width//2, height//2)), (0, 0, 255, 255)
+        )
+        self.assertEqual(type(square), Actor)
+
+    def test_actor_ellipse(self):
+        """The elliptical image is created correctly and the result is a valid
+        actor."""
+        square = Actor.Ellipse(5, 10, "yellow")
+        name = "__SHAPE_ELLIPSE__5x10_yellow"
+        self.assertIn((name, (), ()), images._cache)
+        surf = images.load(name)
+        width, height = surf.get_size()
+        self.assertEqual(width, 5)
+        self.assertEqual(height, 10)
+        self.assertEqual(
+            surf.get_at((width//2, height//2)), (255, 255, 0, 255)
+        )
+        self.assertEqual(type(square), Actor)
+
+    def test_actor_triangle(self):
+        """The triangular image is created correctly and the result is a valid
+        actor."""
+        square = Actor.Triangle(15, 15, "fuchsia")
+        name = "__SHAPE_TRIANGLE__15x15_fuchsia"
+        self.assertIn((name, (), ()), images._cache)
+        surf = images.load(name)
+        width, height = surf.get_size()
+        self.assertEqual(width, 15)
+        self.assertEqual(height, 15)
+        self.assertEqual(
+            surf.get_at((width//2, height//2)), (255, 0, 255, 255)
+        )
+        self.assertEqual(type(square), Actor)
