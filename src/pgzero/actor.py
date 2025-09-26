@@ -364,7 +364,7 @@ class Actor:
     def is_onscreen(self):
         """Returns whether the Actor is within the screen bounds or not."""
         return not (self.right < 0 or self.left > game.screen.get_width() or
-               self.bottom < 0 or self.top > game.screen.get_height())
+                    self.bottom < 0 or self.top > game.screen.get_height())
 
     def unload_image(self):
         loaders.images.unload(self._image_name)
