@@ -308,7 +308,7 @@ class PGZeroGame:
                 if axis:
                     # Translating the axis int to the generic layout as done
                     # above for button events.
-                    event.axis = constants.joyaxis[axis]
+                    event.axis = constants.joyaxis[axis.upper()]
                 else:
                     event.axis = constants.joyaxis.UNKNOWN
                 # Since _set_axis enforces the axis deadzone, event.value is
