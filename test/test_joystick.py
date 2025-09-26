@@ -81,7 +81,7 @@ class JoystickTest(unittest.TestCase):
         self.assertEqual(joy.left_x, -0.5)
 
     def test_joysticks_keys(self):
-        """We can get all current instance ids via the joystick managers 
+        """We can get all current instance ids via the joystick managers
         keys."""
         self.assertEqual(tuple(joysticks.keys()), (999, ))
 
