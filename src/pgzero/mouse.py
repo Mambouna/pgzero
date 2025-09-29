@@ -2,7 +2,6 @@ import pygame
 import pygame.mouse
 from collections import deque
 from itertools import islice
-from . import loaders
 
 
 class Mouse:
