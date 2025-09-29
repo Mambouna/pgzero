@@ -383,8 +383,7 @@ The built-in mouse object can be used to get information of various current
 states of the mouse in the game: where it is, what buttons are pressed,
 whether it is visible and many more...
 
-It can also be used to manipulate the mouse, for example changing its position
-or the displayed mouse cursor.
+It can also be used to manipulate the mouse, for example changing its position.
 
 
 .. class:: Mouse
@@ -473,26 +472,6 @@ or the displayed mouse cursor.
         Returns a boolean of whether the game window is currently
         focused.
 
-    .. attribute:: cursor
-
-        Returns a tuple with two elements: the name string of the
-        current cursor and the hotspot of the cursor if it is known.
-
-        Setting this loads a new cursor and applies it to the mouse.
-        This can be done with either one string, or one string and
-        a hotspot position tuple at the same time.
-
-        For a more detailed explanation, see below.
-
-    .. attribute:: cursor_name
-
-        Returns the current name string of the mouse cursor.
-
-    .. attribute:: cursor_hotspot
-
-        Returns the hotspot tuple of the current cursor or None
-        if the hotspot is unknown (because it is a system cursor).
-
 
 Recent pos and rel
 ''''''''''''''''''
@@ -518,47 +497,6 @@ positions and relative changes. In general though, a higher maximum
 value means positions and changes from longer before will still be
 recorded.
 
-Cursors
-'''''''
-
-Many games change how the mouse cursor looks. PGZero lets you control
-this by setting the ``mouse.cursor`` attribute. There are two options
-here: system cursors or custom cursors.
-
-Windows, MacOS and Linux systems all come with a variety of pre-made
-cursor shapes ready to use. To change to any of them, simply use
-``mouse.cursor = "ARROW"`` where *"ARROW"* is usually the default cursor
-on your system. To use something else, simply change the string to one
-of these options: *"ARROW", "IBEAM", "WAIT", "CROSSHAIR", "HAND"*.
-
-If you want to use a custom cursor from an image you have in the
-``images`` folder, just call ``mouse.cursor = "image_name"`` and the
-cursor will automatically be loaded from the image resource.
-
-When using a custom cursor, you might also want to tell PGZero where
-in the image the spot is, where an actual mouse click should occur.
-The default cursor of most systems has this in the top left corner of
-the cursor image but yours could have it in the center (think shooter
-crosshairs), in the top middle (a pointing hand maybe) or anywhere else.
-
-To tell PGZero where to put the actual point, you can also give a hotspot
-tuple when setting the cursor: ``mouse.cursor = "image_name", (12, 0)``.
-
-This tells the game that when you press a mouse button, the click should
-happen not at the top left corner of the cursor image, but 12 pixels to
-the right of it. This might be the top middle for a cursor with an image
-size of 24x24 pixels. The center for a 40x40 pixels cursor would be
-``(20, 20)``.
-
-This tuple is simply a position tuple like the kind we already know about.
-The only difference is that it looks for the position to put mouse clicks
-not in relation to the top left corner of the game window, but just the
-cursor image.
-
-System cursors define their own hotspot, so you don't have to worry about
-them. This also means you can't manually check the hotspot of system
-cursors with ``mouse.cursor_hotspot`` however. This will return ``None``
-when a system cursor is in use.
 
 LEFT or pressed_left
 ''''''''''''''''''''

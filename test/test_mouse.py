@@ -25,7 +25,6 @@ class MouseTest(unittest.TestCase):
         mouse._press(mouse.MIDDLE)
         mouse._set_pos((10, 10))
         pygame.mouse.set_visible(False)
-        pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
 
     def tearDown(self):
         mouse._null_rel()
@@ -141,16 +140,3 @@ class MouseTest(unittest.TestCase):
         """We can change mouse visibility."""
         mouse.visible = True
         self.assertTrue(pygame.mouse.get_visible())
-
-    def test_get_cursor_name(self):
-        """We can check the cursor name."""
-        self.assertEqual(mouse.cursor_name, "HAND")
-
-    def test_change_cursor(self):
-        """We can change the cursor."""
-        mouse.cursor = "IBEAM"
-        self.assertTrue("IBEAM" in pygame.mouse.get_cursor().__repr__())
-
-    def test_cursor_hotspot(self):
-        """We can check the hotspot of the cursor."""
-        self.assertIsNone(mouse.cursor_hotspot)
